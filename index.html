@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&H Mobile Mechanic | Sydney's Most Trusted Mobile Mechanic</title>
+<meta name="description" content="Mehdi comes to you. Honest, affordable, same-day mobile mechanic servicing Sydney and surrounds. 4.9★ on Google. Call 0424 334 080.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #f5f2ed;
+    --orange: #e85d04;
+    --orange-dark: #c44d00;
+    --orange-light: #ff7a24;
+    --gray: #1a1a1a;
+    --gray-mid: #2e2e2e;
+    --gray-light: #9a9a8a;
+    --cream: #f5f2ed;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.5rem;
+    background: rgba(13,13,13,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232,93,4,0.15);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--orange); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--orange); }
+
+  .nav-cta {
+    background: var(--orange);
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--orange-dark) !important; color: var(--white) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    width: 24px; height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 70% 50%, #1e0d00 0%, var(--black) 70%);
+    z-index: 0;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(232,93,4,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,93,4,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+  }
+
+  .hero-left {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3rem 4rem 5vw;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232,93,4,0.15);
+    border: 1px solid rgba(232,93,4,0.4);
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange-light);
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero-title .accent { color: var(--orange); }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    max-width: 420px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--orange);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.78rem;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  .hero-right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    position: relative;
+    width: 440px;
+    height: 440px;
+  }
+
+  .hero-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(232,93,4,0.2);
+    animation: spin 20s linear infinite;
+  }
+
+  .hero-ring:nth-child(1) { inset: 0; }
+  .hero-ring:nth-child(2) { inset: 30px; animation-direction: reverse; animation-duration: 15s; border-color: rgba(232,93,4,0.12); }
+  .hero-ring:nth-child(3) { inset: 80px; animation-duration: 25s; border-color: rgba(232,93,4,0.08); }
+
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .hero-icon-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .wrench-icon {
+    font-size: 5rem;
+    filter: drop-shadow(0 0 30px rgba(232,93,4,0.5));
+  }
+
+  .hero-rating-card {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background: var(--gray);
+    border: 1px solid rgba(232,93,4,0.3);
+    border-radius: 4px;
+    padding: 16px 20px;
+    min-width: 180px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .rating-stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; }
+  .rating-score { font-family: var(--font-display); font-size: 2.5rem; color: var(--white); line-height: 1; }
+  .rating-label { font-size: 0.75rem; color: var(--gray-light); }
+
+  .hero-avail-card {
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background: var(--gray);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 12px 16px;
+    animation: float 4s 2s ease-in-out infinite;
+  }
+
+  .avail-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
+  .avail-text { font-size: 0.8rem; color: var(--white); font-weight: 500; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--gray);
+    border-top: 1px solid rgba(232,93,4,0.2);
+    border-bottom: 1px solid rgba(232,93,4,0.2);
+    padding: 1rem 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .trust-icon { font-size: 1.1rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 5vw; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--gray-light);
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  /* SERVICES */
+  .services { background: var(--black); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .service-card {
+    background: var(--black);
+    padding: 2rem;
+    transition: all 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover { background: var(--gray); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+  }
+
+  /* WHY US */
+  .why { background: var(--gray); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-points { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
+
+  .why-point {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s;
+  }
+
+  .why-point.visible { opacity: 1; transform: translateX(0); }
+
+  .why-point-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: rgba(232,93,4,0.2);
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  .why-point-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--white);
+  }
+
+  .why-point-text {
+    font-size: 0.88rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+  }
+
+  .why-right {
+    position: relative;
+  }
+
+  .review-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .review-card-small {
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    transition: border-color 0.3s;
+  }
+
+  .review-card-small:hover { border-color: rgba(232,93,4,0.3); }
+
+  .review-card-small .stars { color: var(--orange); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .review-card-small .text { font-size: 0.85rem; color: var(--gray-light); line-height: 1.5; margin-bottom: 0.7rem; font-style: italic; }
+  .review-card-small .author { font-size: 0.78rem; font-weight: 600; color: var(--white); }
+
+  /* REVIEWS SECTION */
+  .reviews-section { background: var(--black); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .review-full {
+    background: var(--gray);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .review-full:hover { border-color: rgba(232,93,4,0.25); transform: translateY(-3px); }
+  .review-full .stars { color: var(--orange); font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 0.75rem; }
+  .review-full .text { font-size: 0.88rem; color: var(--gray-light); line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+  .review-full .author { font-size: 0.82rem; font-weight: 600; color: var(--white); }
+  .review-full .date { font-size: 0.75rem; color: rgba(154,154,138,0.6); margin-top: 2px; }
+
+  /* BOOKING FORM */
+  .booking { background: var(--gray); }
+
+  .booking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .booking-info { padding-top: 0.5rem; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray-light);
+  }
+
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: rgba(232,93,4,0.12);
+    border: 1px solid rgba(232,93,4,0.25);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-label { font-size: 0.75rem; color: var(--gray-light); text-transform: uppercase; letter-spacing: 0.08em; }
+  .contact-value { color: var(--white); font-weight: 500; }
+
+  /* FORM */
+  .booking-form { background: var(--black); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 2.5rem; }
+
+  .form-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { margin-bottom: 1.2rem; }
+
+  label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-light);
+    margin-bottom: 6px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    appearance: none;
+    outline: none;
+  }
+
+  select option { background: var(--gray); color: var(--white); }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--orange);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: rgba(154,154,138,0.5);
+  }
+
+  textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 1.1rem;
+    font-family: var(--font-body);
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success-title { font-family: var(--font-display); font-size: 2rem; color: var(--orange); margin-bottom: 0.5rem; }
+  .form-success-text { font-size: 0.9rem; color: var(--gray-light); }
+
+  /* FOOTER */
+  footer {
+    background: #080808;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-logo span { color: var(--orange); }
+  .footer-copy { font-size: 0.8rem; color: var(--gray-light); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: var(--gray-light); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--orange); }
+
+  /* FLOATING CTA */
+  .float-cta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .float-call {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.85rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(232,93,4,0.4);
+    animation: float 3s ease-in-out infinite;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+
+  .float-call:hover { background: var(--orange-dark); }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* MOBILE NAV */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--orange); }
+  .mobile-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2rem; background: none; border: none; color: var(--white); cursor: pointer; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 6rem 5vw 4rem; }
+    .hero-right { display: none; }
+    .hero-left { padding: 0; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-right { display: none; }
+    .booking-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .trust-bar { gap: 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 5vw; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">M<span>&</span>H</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">✕</button>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#why" onclick="closeMenu()">Why Us</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#booking" onclick="closeMenu()">Book Now</a>
+  <a href="tel:0424334080" style="color: var(--orange);">0424 334 080</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-left">
+    <div class="hero-badge">⚡ Available Today · Sydney Wide</div>
+    <h1 class="hero-title">YOUR MECHANIC<br><span class="accent">COMES</span><br>TO YOU.</h1>
+    <p class="hero-sub">Honest, same-day mobile mechanic servicing the greater Sydney area. No shop overheads — just expert work at your door, at a fair price.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">📋 Get a Free Quote</a>
+      <a href="tel:0424334080" class="btn-outline">📞 0424 334 080</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">4.9★</div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">56+</div>
+        <div class="hero-stat-label">Reviews</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">8yr</div>
+        <div class="hero-stat-label">Loyal Customers</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Same Day</div>
+        <div class="hero-stat-label">Response</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-icon-center">
+        <div class="wrench-icon">🔧</div>
+      </div>
+      <div class="hero-rating-card">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-score">4.9</div>
+        <div class="rating-label">56 Google Reviews</div>
+      </div>
+      <div class="hero-avail-card">
+        <span class="avail-dot"></span>
+        <span class="avail-text">Available Now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✓</span> No hidden fees</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Quality OEM parts</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Same-day service</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> We come to you</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> 4.9★ on Google</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">FULL SERVICE<br>MOBILE REPAIRS</h2>
+      <p class="section-sub">Every job done at your home, office, or roadside — with quality parts and honest pricing.</p>
+    </div>
+    <a href="#booking" class="btn-primary">Book a Service</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🛢️</span>
+      <div class="service-name">Log Book Service</div>
+      <p class="service-desc">Full manufacturer-spec servicing including oil, filters, and inspection — without voiding your warranty.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <div class="service-name">Diagnostics</div>
+      <p class="service-desc">Computer scanning and fault finding with professional equipment. Know what's wrong before you commit.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛑</span>
+      <div class="service-name">Brakes</div>
+      <p class="service-desc">Pads, rotors, calipers and fluid. Fast fault detection and repair at your location.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔋</span>
+      <div class="service-name">Battery & Electrical</div>
+      <p class="service-desc">Batteries, alternators, starters, and all electrical faults — including roadside recovery.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚗</span>
+      <div class="service-name">Pre-Purchase Inspection</div>
+      <p class="service-desc">Buying a used car? Mehdi comes with you to scan and inspect so you buy with confidence.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚙️</span>
+      <div class="service-name">Engine & Mechanical</div>
+      <p class="service-desc">Timing belts, cooling systems, suspension, and general mechanical repairs done on-site.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⛽</span>
+      <div class="service-name">Oil Change</div>
+      <p class="service-desc">Premium quality oil and genuine filter. Done in under an hour, at your door.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏎️</span>
+      <div class="service-name">Steering & Suspension</div>
+      <p class="service-desc">Shocks, struts, wheel bearings, CV joints and more. Ride quality restored.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">Why Choose Mehdi</div>
+      <h2 class="section-title">TRUSTED BY<br>SYDNEY FOR<br>YEARS</h2>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-num">01</div>
+          <div>
+            <div class="why-point-title">Radically Honest</div>
+            <p class="why-point-text">Mehdi explains exactly what's wrong, what's urgent, and what can wait. No upsell, no scare tactics — just straight talk about your car.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">02</div>
+          <div>
+            <div class="why-point-title">We Come to You</div>
+            <p class="why-point-text">At your home, office, or roadside. No towing costs, no waiting rooms, no leaving your car all day.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">03</div>
+          <div>
+            <div class="why-point-title">Quality Parts Only</div>
+            <p class="why-point-text">OEM and top-tier aftermarket parts every time. Your car deserves the right components — not the cheapest ones.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">04</div>
+          <div>
+            <div class="why-point-title">Fair, Transparent Pricing</div>
+            <p class="why-point-text">No surprise bills. Quoted upfront, cheaper than the big chains, and only charged for what your car actually needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-right">
+      <div class="review-stack">
+        <div class="review-card-small">
+          <div class="stars">★★★★★</div>
+          <p class="text">"Mehdi has been my trusted mechanic for the past 8 years. As an older lady, it is hard to find a mechanic you can trust."</p>
+          <div class="author">Joanne Williams · Local Guide</div>
+        </div>
+        <div class="review-card-small">
+          <div class="stars">★★★★★</div>
+          <p class="text">"One of the best mechanics I've ever known in Sydney. Can't recommend Mehdi enough and would gladly come back repeatedly."</p>
+          <div class="author">Sydney Sider · Local Guide, 393 reviews</div>
+        </div>
+        <div class="review-card-small">
+          <div class="stars">★★★★★</div>
+          <p class="text">"He came to my home, did a full service, explained everything — job done in 2 hours. None of this leaving my car at the mechanic all day!"</p>
+          <div class="author">Helen Vesi · Local Guide</div>
+        </div>
+        <div class="review-card-small">
+          <div class="stars">★★★★★</div>
+          <p class="text">"Replaced my alternator when my car died on the way to work and saved my day. Great price and excellent customer service."</p>
+          <div class="author">Tom N.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reveal">
+    <div class="section-label">Social Proof</div>
+    <h2 class="section-title">WHAT SYDNEY<br>IS SAYING</h2>
+    <p class="section-sub">4.9 stars across 56 Google reviews. Real customers, real results.</p>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid">
+    <!-- Injected by JS -->
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-layout">
+    <div class="booking-info reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">BOOK YOUR<br>FREE QUOTE</h2>
+      <p class="section-sub">Fill in the form and Mehdi will get back to you fast — usually same day.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:0424334080" style="color:inherit;text-decoration:none;">0424 334 080</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Based in</div>
+            <div class="contact-value">Northmead NSW 2152</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Hours</div>
+            <div class="contact-value">Mon–Sat: 7am – 6pm</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Service Area</div>
+            <div class="contact-value">Greater Sydney & surrounds</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-form reveal" id="formWrapper">
+      <h3 class="form-title">REQUEST A QUOTE</h3>
+      <form id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" placeholder="04xx xxx xxx" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="carMake">Car Make *</label>
+            <input type="text" id="carMake" placeholder="Toyota" required>
+          </div>
+          <div class="form-group">
+            <label for="carModel">Model & Year</label>
+            <input type="text" id="carModel" placeholder="Camry 2019">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed *</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Log Book Service</option>
+            <option>Oil Change</option>
+            <option>Brake Service</option>
+            <option>Battery / Electrical</option>
+            <option>Diagnostics / Check Engine Light</option>
+            <option>Pre-Purchase Inspection</option>
+            <option>Engine / Mechanical Repair</option>
+            <option>Steering & Suspension</option>
+            <option>Roadside Assistance</option>
+            <option>Other (describe below)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="suburb">Your Suburb *</label>
+          <input type="text" id="suburb" placeholder="e.g. Parramatta" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us more (optional)</label>
+          <textarea id="message" placeholder="Describe the issue or any details that might help…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit" id="submitBtn">Send Request →</button>
+        <p id="formError" style="color:#e85d04;font-size:0.8rem;margin-top:0.75rem;display:none;"></p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">REQUEST SENT!</div>
+        <p class="form-success-text">Thanks — Mehdi will be in touch shortly, usually within a few hours. For urgent help, call <a href="tel:0424334080" style="color:var(--orange);">0424 334 080</a> directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">M<span>&</span>H Mobile Mechanic</div>
+  <div class="footer-copy">© 2025 M&H Mobile Mechanic · Northmead NSW · ABN on request</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#booking">Contact</a>
+    <a href="tel:0424334080">0424 334 080</a>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="float-cta">
+  <a href="tel:0424334080" class="float-call">📞 Call Mehdi Now</a>
+</div>
+
+<script>
+  // REVIEWS DATA
+  const reviews = [
+    { author: "Doreen R", date: "8 months ago", stars: 5, text: "Excellent mechanic. Honest, reliable, and skilled. He handled a big job for us with great attention to detail and affordable pricing. Highly recommend." },
+    { author: "Jude Sabih", date: "1 year ago", stars: 5, text: "Absolutely amazing — arrived same day, on time, looked extremely professional. He has every tool in the book to fix any issue. I had a gear shifting issue that was impossible to fix but Mehdi nailed it." },
+    { author: "Jodie Saul", date: "1 year ago", stars: 5, text: "Amazing service! Mehdi took the time to thoroughly diagnose the issue, repaired at my home in no time even in the bad weather! Honest & reliable and all round good guy. You're a superstar!" },
+    { author: "Paul Roustan", date: "10 months ago", stars: 5, text: "Great reliable and friendly service. Mehdi is very experienced and quickly fault-found and repaired my brakes, which was greatly appreciated." },
+    { author: "Helen Vesi", date: "1 year ago", stars: 5, text: "He came to my home and done a full service, explained everything to me and the job was done in 2 hours. None of this leaving my car at the mechanic all day. What a relief!" },
+    { author: "Khabar Khosh", date: "1 year ago", stars: 5, text: "Exceptional experience with M&H Mobile! Professionalism, honesty and expertise stood out. They quickly diagnosed the issue and explained everything in detail." },
+    { author: "Tom N", date: "9 months ago", stars: 5, text: "Replaced my alternator when my car died on the way to work and saved my day. Did it for a great price and had excellent customer service." },
+    { author: "Bec Sallit", date: "2 months ago", stars: 5, text: "Mehdi was a lifesaver when our holiday was cut short from a breakdown. He showed up when he said he would, was honest about his assessment and provided a detailed explanation. Highly recommend!" },
+    { author: "Dan Betuel", date: "3 years ago", stars: 5, text: "Mahdi came with me to check 2 cars and helped me buying my first car in AUS, came equipped with a computer scanner to check for issues. Very reliable, very honest." },
+    { author: "Darren Smith", date: "3 years ago", stars: 5, text: "Medi was on time, listened to my thoughts on the problem, explained the issue in layman terms. His prices are reasonable and cheaper than bigger companies. No mess left." },
+    { author: "Nico Pau", date: "2 years ago", stars: 5, text: "Mehdi has been my mechanic for years now. I trust this guy and know he will take care of my car. He explains everything you need to know. Easy to contact as well!" },
+    { author: "Joanne Williams", date: "1 year ago", stars: 5, text: "Mehdi has been my trusted mechanic for the past 8 years. As an older lady it is hard to find a mechanic you can trust. I have found that in Mehdi." },
+  ];
+
+  function renderReviews() {
+    const grid = document.getElementById('reviewsGrid');
+    reviews.forEach((r, i) => {
+      const card = document.createElement('div');
+      card.className = 'review-full reveal';
+      card.style.transitionDelay = `${i * 0.06}s`;
+      card.innerHTML = `
+        <div class="stars">${'★'.repeat(r.stars)}</div>
+        <p class="text">"${r.text}"</p>
+        <div class="author">${r.author}</div>
+        <div class="date">${r.date}</div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // SCROLL REVEAL
+  function checkReveal() {
+    document.querySelectorAll('.reveal, .why-point').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  // FORM SUBMISSION
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const errEl = document.getElementById('formError');
+    errEl.style.display = 'none';
+
+    const required = ['firstName', 'lastName', 'phone', 'carMake', 'service', 'suburb'];
+    let missing = [];
+    required.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) {
+        missing.push(el.previousElementSibling.textContent.replace(' *',''));
+        el.style.borderColor = 'var(--orange)';
+      } else {
+        el.style.borderColor = '';
+      }
+    });
+
+    if (missing.length) {
+      errEl.textContent = `Please fill in: ${missing.join(', ')}`;
+      errEl.style.display = 'block';
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Collect form data
+    const data = {
+      name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      car: `${document.getElementById('carMake').value} ${document.getElementById('carModel').value}`,
+      service: document.getElementById('service').value,
+      suburb: document.getElementById('suburb').value,
+      message: document.getElementById('message').value,
+      submitted: new Date().toLocaleString('en-AU')
+    };
+
+    // Save to localStorage as lead log
+    const leads = JSON.parse(localStorage.getItem('mh_leads') || '[]');
+    leads.push(data);
+    localStorage.setItem('mh_leads', JSON.stringify(leads));
+
+    // Simulate async send (replace with real endpoint/emailjs)
+    setTimeout(() => {
+      document.getElementById('bookingForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      console.log('Lead captured:', data);
+    }, 1000);
+  });
+
+  // MOBILE MENU
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // INIT
+  renderReviews();
+  window.addEventListener('scroll', checkReveal);
+  checkReveal();
+
+  // NAV scroll style
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(232,93,4,0.3)' : 'rgba(232,93,4,0.15)';
+  });
+</script>
+</body>
+</html>
